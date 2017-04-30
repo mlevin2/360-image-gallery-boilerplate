@@ -44,9 +44,9 @@
 
     <a-text id="time" value="0:15\nSOL 24" align="center" position="2 2 -4"></a-text>
 
-    <a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="0 10 -2"></a-entity>
+    <!--<a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="3 6 -2"></a-entity>-->
 
-    <!--<a-entity id="cube" geometry="primitive: box; width: 1; height: 1" material="color: red" position="1 2 -4"></a-entity>-->
+    <a-entity id="test" geometry="primitive: sphere; radius: 1" material="color: red" position="0 .25 -3"></a-entity>
 
     <a-entity id="dashboard" geometry="primitive: plane; height: 2; width: 3" material="shader: flat; src: #dashboard1" position="0 1 -4"></a-entity>
 
@@ -68,7 +68,7 @@
     </a-entity>
 
     <a-light type="ambient" color="#445451"></a-light>
-    <a-light type="point" intensity="2" position="2 4 4"></a-light>
+    <a-light id="point-light" type="point" intensity="2" position="0 10 0"></a-light>
 
 </a-scene>
 </body>
