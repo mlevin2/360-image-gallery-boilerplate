@@ -5,9 +5,9 @@
     <title>PROXIMA</title>
     <meta name="description" content="PROXIMA">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-animation-component"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component"></script>
+    <script src="https://npmcdn.com/aframe-layout-component"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     <script src="components/set-image.js"></script>
 </head>
@@ -21,15 +21,17 @@
         <img id="mars" crossorigin="anonymous" src="assets/0733.jpg">
 
         <!-- Image link template to be reused. -->
-        <script id="link" type="text/html">
-            <a-entity class="link"
+        <script id="text" type="text/html">
+            <a-text class="link"
+                      value="${text}"
+                      align="center"
                       geometry="primitive: plane; height: 0.5; width: 1"
-                      material="shader: flat; src: ${thumb}"
+                      material="color: black"
                       event-set__1="_event: mousedown; scale: 1 1 1"
                       event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                       event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
                       event-set__4="_event: mouseleave; scale: 1 1 1"
-                      sound="on: click; src: #click-sound"></a-entity>
+                      sound="on: click; src: #click-sound"></a-text>
         </script>
     </a-assets>
 
@@ -38,9 +40,8 @@
 
     <!-- Image links. -->
     <a-entity id="links" layout="type: line; margin: 1.25" position="0 -1 -4">
-        <a-text value="TEXT"></a-text>
-        <a-entity template="src: #link" data-thumb="#earlier"></a-entity>
-        <a-entity template="src: #link" data-thumb="#later"></a-entity>
+        <a-entity template="src: #text" data-text="HELLO"></a-entity>
+        <a-entity template="src: #text" data-text="Goodbye!"></a-entity>
     </a-entity>
 
     <!-- Camera + cursor. -->
