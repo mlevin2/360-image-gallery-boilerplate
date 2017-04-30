@@ -6,7 +6,8 @@ AFRAME.registerComponent('change-time', {
         on: { type: 'string' },
         time: { type: 'string' },
         brightness: { type: 'string' },
-        dashboard: { type: 'string' }
+        dashboard: { type: 'string' },
+        target: { type: 'selector' }
     },
 
     init: function () {
@@ -18,7 +19,7 @@ AFRAME.registerComponent('change-time', {
             document.querySelector('#time').setAttribute('text', 'value', data.time + '\nSOL 24');
             document.querySelector('#dashboard').setAttribute('material', 'src', data.dashboard);
 
-    // <a-sky id="image-360" radius="10" src="#sky-1230"></a-sky>
+            // <a-sky id="image-360" radius="10" src="#sky-1230"></a-sky>
 
             // TODO: Kris, change the lighting here
             switch (data.time) {
