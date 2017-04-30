@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>PROXIMA</title>
     <meta name="description" content="PROXIMA">
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
@@ -38,6 +38,7 @@
 
     <!-- Image links. -->
     <a-entity id="links" layout="type: line; margin: 1.25" position="0 -1 -4">
+        <a-text value="TEXT"></a-text>
         <a-entity template="src: #link" data-thumb="#earlier"></a-entity>
         <a-entity template="src: #link" data-thumb="#later"></a-entity>
     </a-entity>
@@ -52,6 +53,11 @@
                   fuse="true"
                   raycaster="objects: .link"></a-cursor>
     </a-entity>
+
+
+    <a-light type="ambient" color="#445451"></a-light>
+    <a-light type="point" intensity="2" position="2 4 4"></a-light>
+
 </a-scene>
 </body>
 </html>
