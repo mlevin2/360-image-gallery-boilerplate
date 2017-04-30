@@ -9,7 +9,6 @@
     <script src="https://npmcdn.com/aframe-event-set-component"></script>
     <script src="https://npmcdn.com/aframe-layout-component"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="components/set-image.js"></script>
 </head>
 <body>
 <a-scene>
@@ -20,7 +19,6 @@
         <img id="later" crossorigin="anonymous" src="assets/later.png">
         <img id="mars" crossorigin="anonymous" src="assets/0733.jpg">
 
-        <!-- Image link template to be reused. -->
         <script id="text" type="text/html">
             <a-text class="link"
                       value="${text}"
@@ -35,12 +33,10 @@
         </script>
     </a-assets>
 
-    <!-- 360-degree image. -->
     <a-sky id="image-360" radius="10" src="#mars"></a-sky>
 
     <a-text value="7:55 AM\nSOL 24" align="center" position="2 2 -4"></a-text>
 
-    <!-- Image links. -->
     <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
         <a-entity template="src: #text" data-text="0"></a-entity>
         <a-entity template="src: #text" data-text="8"></a-entity>
@@ -48,7 +44,6 @@
         <a-entity template="src: #text" data-text="24"></a-entity>
     </a-entity>
 
-    <!-- Camera + cursor. -->
     <a-entity camera look-controls>
         <a-cursor id="cursor"
                   animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
