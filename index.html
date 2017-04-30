@@ -42,19 +42,19 @@
 
     <a-sky id="image-360" radius="10" src="#mars"></a-sky>
 
-    <a-text id="time" value="0:00\nSOL 24" align="center" position="2 2 -4"></a-text>
+    <a-text id="time" value="0:15\nSOL 24" align="center" position="2 2 -4"></a-text>
 
-    <a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="0 10 -2"></a-entity>
+    <!--<a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="3 6 -2"></a-entity>-->
 
-    <!--<a-entity id="cube" geometry="primitive: box; width: 1; height: 1" material="color: red" position="1 2 -4"></a-entity>-->
+    <a-entity id="test" geometry="primitive: sphere; radius: 1" material="color: red" position="0 .25 -3"></a-entity>
 
     <a-entity id="dashboard" geometry="primitive: plane; height: 2; width: 3" material="shader: flat; src: #dashboard1" position="0 1 -4"></a-entity>
 
     <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
-        <a-entity template="src: #text" data-text="0" data-time="0:00" data-brightness="0" data-dashboard="#dashboard1"></a-entity>
-        <a-entity template="src: #text" data-text="8" data-time="8:00" data-brightness="20" data-dashboard="#dashboard2"></a-entity>
-        <a-entity template="src: #text" data-text="16" data-time="16:00" data-brightness="40" data-dashboard="#dashboard3"></a-entity>
-        <a-entity template="src: #text" data-text="24" data-time="24:00" data-brightness="60" data-dashboard="#dashboard4"></a-entity>
+        <a-entity template="src: #text" data-text="0:15" data-time="0:15" data-brightness="0" data-dashboard="#dashboard1"></a-entity>
+        <a-entity template="src: #text" data-text="8:15" data-time="8:15" data-brightness="20" data-dashboard="#dashboard2"></a-entity>
+        <a-entity template="src: #text" data-text="16:15" data-time="16:15" data-brightness="40" data-dashboard="#dashboard3"></a-entity>
+        <a-entity template="src: #text" data-text="24:15" data-time="24:15" data-brightness="60" data-dashboard="#dashboard4"></a-entity>
     </a-entity>
 
     <a-entity camera look-controls>
@@ -68,7 +68,7 @@
     </a-entity>
 
     <a-light type="ambient" color="#445451"></a-light>
-    <a-light type="point" intensity="2" position="2 4 4"></a-light>
+    <a-light id="point-light" type="point" intensity="2" position="0 10 0"></a-light>
 
 </a-scene>
 </body>
