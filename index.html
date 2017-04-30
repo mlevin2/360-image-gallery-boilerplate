@@ -18,11 +18,14 @@
                src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         <img id="earlier" crossorigin="anonymous" src="assets/earlier.png">
         <img id="later" crossorigin="anonymous" src="assets/later.png">
-        <img id="mars" crossorigin="anonymous" src="assets/0733.jpg">
-        <img id="dashboard1" crossorigin="anonymous" src="assets/dashboard1.png">
-        <img id="dashboard2" crossorigin="anonymous" src="assets/dashboard2.png">
-        <img id="dashboard3" crossorigin="anonymous" src="assets/dashboard3.png">
-        <img id="dashboard4" crossorigin="anonymous" src="assets/dashboard4.png">
+        <img id="sky-0000" crossorigin="anonymous" src="assets/sky-0000.jpg">
+        <img id="sky-0615" crossorigin="anonymous" src="assets/sky-0615.jpg">
+        <img id="sky-1230" crossorigin="anonymous" src="assets/sky-1230.jpg">
+        <img id="sky-1845" crossorigin="anonymous" src="assets/sky-1845.jpg">
+        <img id="dashboard1" crossorigin="anonymous" src="assets/dash-0000.jpg">
+        <img id="dashboard2" crossorigin="anonymous" src="assets/dash-0615.jpg">
+        <img id="dashboard3" crossorigin="anonymous" src="assets/dash-1230.jpg">
+        <img id="dashboard4" crossorigin="anonymous" src="assets/dash-1845.jpg">
 
         <script id="text" type="text/html">
             <a-text class="link"
@@ -40,9 +43,9 @@
 
     </a-assets>
 
-    <a-sky id="image-360" radius="10" src="#mars"></a-sky>
+    <a-sky id="image-360" radius="10" src="#sky-1230"></a-sky>
 
-    <a-text id="time" value="0:15\nSOL 24" align="center" position="2 2 -4"></a-text>
+    <a-text id="time" value="12:30\nSOL 24" align="center" position="2 2 -4"></a-text>
 
     <!--<a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="3 6 -2"></a-entity>-->
 
@@ -58,13 +61,13 @@
               position="0 1 -4"></a-entity>
 
     <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
-        <a-entity template="src: #text" data-text="0:15" data-time="0:15" data-brightness="0"
+        <a-entity template="src: #text" data-text="0:00" data-time="0:00" data-brightness="0"
                   data-dashboard="#dashboard1"></a-entity>
-        <a-entity template="src: #text" data-text="8:15" data-time="8:15" data-brightness="20"
+        <a-entity template="src: #text" data-text="6:15" data-time="6:15" data-brightness="20"
                   data-dashboard="#dashboard2"></a-entity>
-        <a-entity template="src: #text" data-text="16:15" data-time="16:15" data-brightness="40"
+        <a-entity template="src: #text" data-text="12:30" data-time="12:30" data-brightness="40"
                   data-dashboard="#dashboard3"></a-entity>
-        <a-entity template="src: #text" data-text="24:15" data-time="24:15" data-brightness="60"
+        <a-entity template="src: #text" data-text="18:45" data-time="18:45" data-brightness="60"
                   data-dashboard="#dashboard4"></a-entity>
     </a-entity>
 
