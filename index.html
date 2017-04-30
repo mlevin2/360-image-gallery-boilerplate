@@ -18,11 +18,17 @@
                src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         <img id="earlier" crossorigin="anonymous" src="assets/earlier.png">
         <img id="later" crossorigin="anonymous" src="assets/later.png">
-        <img id="mars" crossorigin="anonymous" src="assets/0733.jpg">
-        <img id="dashboard1" crossorigin="anonymous" src="assets/dashboard1.png">
-        <img id="dashboard2" crossorigin="anonymous" src="assets/dashboard2.png">
-        <img id="dashboard3" crossorigin="anonymous" src="assets/dashboard3.png">
-        <img id="dashboard4" crossorigin="anonymous" src="assets/dashboard4.png">
+        <img id="sky-0000" crossorigin="anonymous" src="assets/sky-0000.jpg">
+        <img id="sky-0615" crossorigin="anonymous" src="assets/sky-0615.jpg">
+        <img id="sky-1230" crossorigin="anonymous" src="assets/sky-1230.jpg">
+        <img id="sky-1845" crossorigin="anonymous" src="assets/sky-1845.jpg">
+        <img id="dashboard1" crossorigin="anonymous" src="assets/dash-0000.jpg">
+        <img id="dashboard2" crossorigin="anonymous" src="assets/dash-0615.jpg">
+        <img id="dashboard3" crossorigin="anonymous" src="assets/dash-1230.jpg">
+        <img id="dashboard4" crossorigin="anonymous" src="assets/dash-1845.jpg">
+
+        <a-asset-item id="hab-obj" src="assets/3d/HDU_lowRez_part1.obj"></a-asset-item>
+        <a-asset-item id="hab-mtl" src="assets/3d/HDU_lowRez_part1.mtl"></a-asset-item>
 
         <script id="text" type="text/html">
             <a-text class="link"
@@ -34,22 +40,24 @@
                     event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                     event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
                     event-set__4="_event: mouseleave; scale: 1 1 1"
-                    change-time="on: click; time: ${time}; brightness: ${brightness}; dashboard: ${dashboard}"
+                    change-time="on: click; time: ${time}; brightness: ${brightness}; dashboard: ${dashboard}; target: #image-360"
                     sound="on: click; src: #click-sound"></a-text>
         </script>
 
     </a-assets>
 
-    <a-sky id="image-360" radius="10" src="#mars"></a-sky>
+    <a-entity obj-model="obj: #hab-obj; mtl: #hab-mtl" scale="0.005 0.005 0.005" position="-5 -1 -10"></a-entity>
 
-    <a-text id="time" value="0:15\nSOL 24" align="center" position="2 2 -4"></a-text>
+    <a-sky id="image-360" radius="15" src="#sky-1230"></a-sky>
+
+    <a-text id="time" value="12:30\nSOL 24" align="center" position="2 2 -4"></a-text>
 
     <!--<a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="3 6 -2"></a-entity>-->
 
     <a-entity id="test" geometry="primitive: cylinder; radius: 0.3; height: 0.5"
               material="color: white; wireframe: true"
-              position="1.5 0.1 -2.5">
-        <a-entity id="water" geometry="primitive: cylinder; radius: 0.3; height: 0.25" material="color: blue" position="0 -0.1 0">
+              position="1.5 0 -2.5">
+        <a-entity id="water" geometry="primitive: cylinder; radius: 0.3; height: 0.25" material="color: blue" position="0 -0.125 0">
         </a-entity>
 
     </a-entity>
@@ -58,13 +66,13 @@
               position="0 1 -4"></a-entity>
 
     <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
-        <a-entity template="src: #text" data-text="0:15" data-time="0:15" data-brightness="0"
+        <a-entity template="src: #text" data-text="0:00" data-time="0:00" data-brightness="0"
                   data-dashboard="#dashboard1"></a-entity>
-        <a-entity template="src: #text" data-text="8:15" data-time="8:15" data-brightness="20"
+        <a-entity template="src: #text" data-text="6:15" data-time="6:15" data-brightness="20"
                   data-dashboard="#dashboard2"></a-entity>
-        <a-entity template="src: #text" data-text="16:15" data-time="16:15" data-brightness="40"
+        <a-entity template="src: #text" data-text="12:30" data-time="12:30" data-brightness="40"
                   data-dashboard="#dashboard3"></a-entity>
-        <a-entity template="src: #text" data-text="24:15" data-time="24:15" data-brightness="60"
+        <a-entity template="src: #text" data-text="18:45" data-time="18:45" data-brightness="60"
                   data-dashboard="#dashboard4"></a-entity>
     </a-entity>
 
