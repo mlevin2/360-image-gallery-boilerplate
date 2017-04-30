@@ -46,7 +46,6 @@
 
     </a-assets>
 
-    <a-entity obj-model="obj: #hab-obj; mtl: #hab-mtl" scale="0.005 0.005 0.005" position="-5 -1 -10"></a-entity>
 
     <a-sky id="image-360" radius="15" src="#sky-1230"></a-sky>
 
@@ -76,7 +75,9 @@
                   data-dashboard="#dashboard4"></a-entity>
     </a-entity>
 
-    <a-entity camera look-controls>
+    <a-entity obj-model="obj: #hab-obj; mtl: #hab-mtl" scale="0.005 0.005 0.005" position="-5 -1 -10"></a-entity>
+
+     <a-entity camera look-controls>
         <a-cursor id="cursor"
                   animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
                   animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
