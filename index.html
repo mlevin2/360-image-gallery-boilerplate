@@ -9,7 +9,7 @@
     <script src="https://npmcdn.com/aframe-event-set-component"></script>
     <script src="https://npmcdn.com/aframe-layout-component"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="components/set-image.js"></script>
+    <script src="components/change-time.js"></script>
 </head>
 <body>
 <a-scene>
@@ -19,36 +19,42 @@
         <img id="earlier" crossorigin="anonymous" src="assets/earlier.png">
         <img id="later" crossorigin="anonymous" src="assets/later.png">
         <img id="mars" crossorigin="anonymous" src="assets/0733.jpg">
+        <img id="dashboard1" crossorigin="anonymous" src="assets/dashboard1.png">
+        <img id="dashboard2" crossorigin="anonymous" src="assets/dashboard2.png">
+        <img id="dashboard3" crossorigin="anonymous" src="assets/dashboard3.png">
+        <img id="dashboard4" crossorigin="anonymous" src="assets/dashboard4.png">
 
-        <!-- Image link template to be reused. -->
         <script id="text" type="text/html">
             <a-text class="link"
-                      value="${text}"
-                      align="center"
-                      geometry="primitive: plane; height: 0.25; width: 1.25"
-                      material="color: black; opacity: .25"
-                      event-set__1="_event: mousedown; scale: 1 1 1"
-                      event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                      event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                      event-set__4="_event: mouseleave; scale: 1 1 1"
-                      sound="on: click; src: #click-sound"></a-text>
+                    value="${text}"
+                    align="center"
+                    geometry="primitive: plane; height: 0.25; width: 1.25"
+                    material="color: black; opacity: 0.25"
+                    event-set__1="_event: mousedown; scale: 1 1 1"
+                    event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                    event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                    event-set__4="_event: mouseleave; scale: 1 1 1"
+                    change-time="on: click; time: ${time}; brightness: ${brightness}; dashboard: ${dashboard}"
+                    sound="on: click; src: #click-sound"></a-text>
         </script>
+
     </a-assets>
 
-    <!-- 360-degree image. -->
     <a-sky id="image-360" radius="10" src="#mars"></a-sky>
 
-    <a-text value="7:55 AM\nSOL 24" align="center" position="2 2 -4"></a-text>
+    <a-text id="time" value="7:55 AM\nSOL 24" align="center" position="2 2 -4"></a-text>
 
-    <!-- Image links. -->
+    <a-entity id="sun" geometry="primitive: sphere; radius: 3" material="color: white" position="0 10 -2"></a-entity>
+
+    <a-entity id="dashboard" geometry="primitive: plane; height: 2; width: 3" material="shader: flat; src: #dashboard1" position="0 1 -4"></a-entity>
+
     <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
-        <a-entity template="src: #text" data-text="0"></a-entity>
-        <a-entity template="src: #text" data-text="8"></a-entity>
-        <a-entity template="src: #text" data-text="16"></a-entity>
-        <a-entity template="src: #text" data-text="24"></a-entity>
+        <a-entity template="src: #text" data-text="0" data-time="0:00" data-brightness="0" data-dashboard="#dashboard1"></a-entity>
+        <a-entity template="src: #text" data-text="8" data-time="8:00" data-brightness="20" data-dashboard="#dashboard2"></a-entity>
+        <a-entity template="src: #text" data-text="16" data-time="16:00" data-brightness="40" data-dashboard="#dashboard3"></a-entity>
+        <a-entity template="src: #text" data-text="24" data-time="24:00" data-brightness="60" data-dashboard="#dashboard4"></a-entity>
     </a-entity>
 
-    <!-- Camera + cursor. -->
     <a-entity camera look-controls>
         <a-cursor id="cursor"
                   animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
@@ -58,7 +64,6 @@
                   fuse="true"
                   raycaster="objects: .link"></a-cursor>
     </a-entity>
-
 
     <a-light type="ambient" color="#445451"></a-light>
     <a-light type="point" intensity="2" position="2 4 4"></a-light>
