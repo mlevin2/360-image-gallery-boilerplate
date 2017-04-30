@@ -25,8 +25,8 @@
             <a-text class="link"
                       value="${text}"
                       align="center"
-                      geometry="primitive: plane; height: 0.5; width: 1"
-                      material="color: black"
+                      geometry="primitive: plane; height: 0.25; width: 1.25"
+                      material="color: black; opacity: .25"
                       event-set__1="_event: mousedown; scale: 1 1 1"
                       event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                       event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
@@ -41,10 +41,11 @@
     <a-text value="7:55 AM\nSOL 24" align="center" position="2 2 -4"></a-text>
 
     <!-- Image links. -->
-    <a-entity id="links" layout="type: line; margin: 1.25" position="-1 -1 -4">
-        <a-entity template="src: #text" data-text="HELLO"></a-entity>
-        <a-entity template="src: #text" data-text=":-)"></a-entity>
-        <a-entity template="src: #text" data-text="Goodbye!"></a-entity>
+    <a-entity id="links" layout="type: line; margin: 1.25" position="-2 -1 -4">
+        <a-entity template="src: #text" data-text="0"></a-entity>
+        <a-entity template="src: #text" data-text="8"></a-entity>
+        <a-entity template="src: #text" data-text="16"></a-entity>
+        <a-entity template="src: #text" data-text="24"></a-entity>
     </a-entity>
 
     <!-- Camera + cursor. -->
